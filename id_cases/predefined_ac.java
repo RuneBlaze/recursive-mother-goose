@@ -1,0 +1,3 @@
+class Predefined {
+    String[] a;
+}
