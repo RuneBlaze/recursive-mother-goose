@@ -1,6 +1,6 @@
 class QuickSort{
     public static void main(String[] a){
-	QS qs = new QS()
+	QS qs = new QS();
         System.out.println(qs.Start(10));
     }
 }
