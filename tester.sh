@@ -10,8 +10,9 @@ for i in id_cases/*_ac.java; do
     let "total=total+1"
     echo "========$i========"
     java miniJava.Compiler $i
-    if [ "$?" -ne 0 ]; then
-        echo "${red} $i not passed: $? ${reset}"
+    ec=$?
+    if [ "$ec" -ne 0 ]; then
+        echo "${red} $i not passed: $ec ${reset}"
         let "incorrect=incorrect+1"
     fi
     # echo "================="
@@ -22,8 +23,9 @@ for i in id_cases/*_wa.java; do
     let "total=total+1"
     echo "=======$i========"
     java miniJava.Compiler $i
-    if [ "$?" = 0 ]; then
-        echo "${red} $i not passed: $? ${reset}"
+    ec=$?
+    if [ "$ec" -ne 4 ]; then
+        echo "${red} $i not passed: $ec ${reset}"
         let "incorrect=incorrect+1"
     fi
     # echo "================="
